@@ -162,7 +162,11 @@
     <footer class="footer_catalog">
         <hr class="menu_line">
         <div class="text_footer">
-            <p> &copy Все права защищены </p>
+            <?php
+            $date = date('l, F jS, Y');
+            echo "<p>$date  &copy Все права защищены </p>"
+            ?>
+
         </div>
     </footer>
 
