@@ -12,9 +12,7 @@ mathOperation(535, 436, "+");
  * @param $arg1 number Первый аргумент
  * @param $arg2 number Второй аргумент
  * @param $operation string Операция между аргументами
- * @return number Результат вычисления
  */
-
 function mathOperation( int $arg1, int $arg2, $operation)
 {
 
