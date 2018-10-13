@@ -10,58 +10,65 @@
 (‘а’=> ’a’, ‘б’ => ‘b’, ‘в’ => ‘v’, ‘г’ => ‘g’, …, ‘э’ => ‘e’, ‘ю’ => ‘yu’, ‘я’ => ‘ya’).
 Написать функцию транслитерации строк.*/
 
-$alphabet = [
-    'а' => 'a',
-    'б' => 'b',
-    'в' => 'v',
-    'г' => 'g',
-    'д' => 'd',
-    'е' => 'e',
-    'ё' => 'yo',
-    'ж' => 'zh',
-    'з' => 'z',
-    'и' => 'i',
-    'й' => 'j',
-    'к' => 'k',
-    'л' => 'l',
-    'м' => 'm',
-    'н' => 'n',
-    'о' => 'o',
-    'п' => 'p',
-    'р' => 'r',
-    'с' => 's',
-    'т' => 't',
-    'у' => 'u',
-    'ф' => 'f',
-    'х' => 'h',
-    'ц' => 'c',
-    'ч' => 'ch',
-    'ш' => 'sh',
-    'щ' => 'shh',
-    'ъ' => '``',
-    'ы' => 'y`',
-    'ь' => '``',
-    'э' => 'e`',
-    'ю' => 'yu',
-    'я' => 'ya',
-    ' ' => '_',
-];
 
-transliterations("maxim Maxxx");
+transliterations("апривет че как дела ");
 
-    function transliterations($word)
-    {
-        $encoding = 'UTF-8';
-        $strlen = mb_strlen($word);
-        while ($strlen) {
-            $array[] = mb_substr($word, 0, 1, $encoding);
-            $word = mb_substr($word, 1, $strlen, $encoding);
-            $strlen = mb_strlen($word, $encoding);
+function transliterations($word)
+{
+    $alphabet = [
+        'а' => 'a',
+        'б' => 'b',
+        'в' => 'v',
+        'г' => 'g',
+        'д' => 'd',
+        'е' => 'e',
+        'ё' => 'yo',
+        'ж' => 'zh',
+        'з' => 'z',
+        'и' => 'i',
+        'й' => 'j',
+        'к' => 'k',
+        'л' => 'l',
+        'м' => 'm',
+        'н' => 'n',
+        'о' => 'o',
+        'п' => 'p',
+        'р' => 'r',
+        'с' => 's',
+        'т' => 't',
+        'у' => 'u',
+        'ф' => 'f',
+        'х' => 'h',
+        'ц' => 'c',
+        'ч' => 'ch',
+        'ш' => 'sh',
+        'щ' => 'shh',
+        'ъ' => '``',
+        'ы' => 'y`',
+        'ь' => '``',
+        'э' => 'e`',
+        'ю' => 'yu',
+        'я' => 'ya',
+        ' ' => '_',
+    ];
+    $arr = preg_split('//u', $word, -1, PREG_SPLIT_NO_EMPTY);
+    $a = 0;
+    foreach ($arr as $item) {
+        $arrray1 = [];
+        $arrray2 = [];
+        foreach ($alphabet as $abc => $obl) {
+            array_push($arrray1, $abc);
+            array_push($arrray2, $obl);
+            $key2 = array_search($item, $arrray1);
+            $arr[$a] = $arrray2[$key2];
         }
-        return ($array);
+        $a++;
     }
-//function transliterations($word)
-//{
-   // $arr = str_split($word);
-    //print_r($arr) ;
-//}
+    $str = implode('', $arr);
+    echo $str;
+}
+
+
+
+
+
