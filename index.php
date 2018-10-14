@@ -23,11 +23,17 @@
             </div>
             <div class="header">
                 <header>
-                    <ul class="menu">
-                        <li class="menu"><a class="main_menu" href="#index"> Главная </a></li>
-                        <li class="menu"><a class="main_menu" href="#katalog"> Каталог </a></li>
-                        <li class="menu"><a class="main_menu" href="#kontakty"> Контакты </a></li>
-                    </ul>
+
+                    <?php
+                    include 'Lesson_3/Lesson_3_6.php'
+                    /*
+                                        $menu_item = "<li class='menu'><a class='main_menu' href='#index'> Главная </a></li>";
+                                        echo "<ul class='menu'>
+                                            <li class='menu'><a class='main_menu' href='#index'> Главная </a></li>
+                                            <li class='menu'><a class='main_menu' href='#katalog'> Каталог </a></li>
+                                            <li class='menu'><a class='main_menu' href='#kontakty'> Контакты </a></li>
+                                        </ul>"
+                                        */ ?>
                 </header>
             </div>
         </div>
