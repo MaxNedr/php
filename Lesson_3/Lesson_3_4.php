@@ -11,7 +11,7 @@
 Написать функцию транслитерации строк.*/
 
 
-transliterations("апривет че как дела ");
+transliterations("привет че как дела я хз как но это работает");
 
 function transliterations($word)
 {
@@ -56,9 +56,9 @@ function transliterations($word)
     foreach ($arr as $item) {
         $arrray1 = [];
         $arrray2 = [];
-        foreach ($alphabet as $abc => $obl) {
+        foreach ($alphabet as $abc => $kirillic) {
             array_push($arrray1, $abc);
-            array_push($arrray2, $obl);
+            array_push($arrray2, $kirillic);
             $key2 = array_search($item, $arrray1);
             $arr[$a] = $arrray2[$key2];
         }
