@@ -81,11 +81,11 @@
 <body>
 <div class="galleryPreviewsContainer">
     <?php
-    $pathToImgFolder = "images/max/";
-    $arrImg = array_diff(scandir($pathToImgFolder), array('..', '.'));
-    foreach ($arrImg as $imgName) {
-        $path = $pathToImgFolder . $imgName;
-        echo "<img class=\"small_image\" src=\"{$path}\" data-full_image_url=\"{$path}\">";
+    $folderWithImg = "images/max/";
+    $arrayWithImg = array_diff(scandir($folderWithImg), array('..', '.'));
+    foreach ($arrayWithImg as $img) {
+        $src = $folderWithImg . $img;
+        echo "<img class=\"small_image\" src=\"$src\" >";
     }
     ?>
 
