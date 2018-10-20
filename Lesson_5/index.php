@@ -74,6 +74,12 @@
         .small_image{
             width: 250px;
             height: 200px;
+            transition: ease-in-out 0.5s;
+        }
+
+        .small_image:hover{
+
+            transform: scale3d(1.1,1.1,1.1);
         }
 
     </style>
@@ -90,18 +96,6 @@
     ?>
 
 </div>
-<!--
-<div class="galleryWrapper">
-  <div class="galleryWrapper__screen"></div>
-  <img class="galleryWrapper__close" src="images/gallery/close.png" alt="">
-  <img class="galleryWrapper__image" src="images/max/1.jpg" alt="">
-
-</div>
--->
-<!--<div class="arrows">
-  <div class="arrows__left"></div>
-  <div class="arrows__right"></div>
-</div>-->
 <script src="js.js"></script>
 </body>
 </html>
