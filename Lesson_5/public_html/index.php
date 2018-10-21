@@ -9,7 +9,7 @@ require '../config/main.php';
 // функции для работы с базой данных
 include '../engine/database.php';
 
-$product = getItemArray('select * from `product`');
+$product = getItemArray('select * from `product` order by count_view desc');
 
 ?>
 <!DOCTYPE html>
