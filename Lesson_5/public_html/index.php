@@ -1,3 +1,17 @@
+<?php
+
+/**
+ * начальная страница сайта
+ */
+
+// поключаем конфигурации приложения
+require '../config/main.php';
+// функции для работы с базой данных
+include '../engine/database.php';
+
+$user = getItem('select * from `users`');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,16 +100,21 @@
 </head>
 <body>
 <div class="galleryPreviewsContainer">
-    <?php
-    $folderWithImg = "images/max/";
+   <!-- --><?php
+/*    $folderWithImg = "img/images/max/";
     $arrayWithImg = array_diff(scandir($folderWithImg), array('..', '.'));
     foreach ($arrayWithImg as $img) {
         $src = $folderWithImg . $img;
         echo "<img class=\"small_image\" src=\"$src\" >";
     }
-    ?>
+    */?>
 
 </div>
-<script src="js.js"></script>
+<ul>
+    <?php foreach ($user as $key => $value) :?>
+        <li><?= $key ?>: <?= $value ?></li>
+    <?php endforeach; ?>
+</ul>
+<script src="js/js.js"></script>
 </body>
 </html>
