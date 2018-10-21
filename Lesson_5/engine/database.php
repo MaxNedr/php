@@ -41,3 +41,10 @@ function execute(string $sql) {
 
     return $result;
 }
+function countView($id) {
+    global $connection;
+    $result = mysqli_query($connection, "select * from `product` WHERE id={$_GET['id']}");
+    $row = mysqli_fetch_assoc($result);
+    $viewCount = (int)$row[count_view] + 1;
+    mysqli_query($connection, "UPDATE `product` SET `count_view` = $viewCount WHERE (`id` = $id)");
+}

@@ -8,15 +8,14 @@
 require '../config/main.php';
 // функции для работы с базой данных
 include '../engine/database.php';
-
-$product = getItemArray('select * from `product`');
-
+countView($_GET['id']);
+$product = getItem("select * from `product` WHERE id={$_GET['id']}");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Галерея</title>
+    <title>Товар</title>
     <style>
         .galleryWrapper__screen {
             left: 0;
@@ -96,27 +95,22 @@ $product = getItemArray('select * from `product`');
 
             transform: scale3d(1.1, 1.1, 1.1);
         }
-
+        .big_image {
+            max-width: 80%;
+            max-height: 80%;
     </style>
+    <script src="js/js.js"></script>
 </head>
 <body>
-<div class="galleryPreviewsContainer">
 
+<div class="product">
+    <?php
+    echo "<img src=\"$product[url]\" class='big_image'> \n";
+    echo "<p>Количество просмотров: </p>" . $product['count_view'];
+    echo "<p>Цена: </p>".$product['price']
+    ?>
 </div>
-<!-- --><?php
-/*    $folderWithImg = "img/images/max/";
-    $arrayWithImg = array_diff(scandir($folderWithImg), array('..', '.'));
-    foreach ($arrayWithImg as $img) {
-        $src = $folderWithImg . $img;
-        echo "<img class=\"small_image\" src=\"$src\" >";
-    }
-    */ ?>
-<?php foreach ($product as $key) : ?>
-    <a href="product.php?id=<?=$key['id']?>" target='_blank'>
-        <img class="small_image" src=<?= $key['url'] ?>>
-    </a>
 
-<?php endforeach; ?>
-<script src="js/js.js"></script>
+
 </body>
 </html>
