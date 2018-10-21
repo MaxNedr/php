@@ -9,7 +9,7 @@ require '../config/main.php';
 // функции для работы с базой данных
 include '../engine/database.php';
 
-$user = getItem('select * from `users`');
+$product = getItemArray('select * from `product`');
 
 ?>
 <!DOCTYPE html>
@@ -85,36 +85,37 @@ $user = getItem('select * from `users`');
             font-weight: bolder;
             cursor: pointer;
         }
-        .small_image{
+
+        .small_image {
             width: 250px;
             height: 200px;
             transition: ease-in-out 0.5s;
         }
 
-        .small_image:hover{
+        .small_image:hover {
 
-            transform: scale3d(1.1,1.1,1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
         }
 
     </style>
 </head>
 <body>
 <div class="galleryPreviewsContainer">
-   <!-- --><?php
-/*    $folderWithImg = "img/images/max/";
-    $arrayWithImg = array_diff(scandir($folderWithImg), array('..', '.'));
-    foreach ($arrayWithImg as $img) {
-        $src = $folderWithImg . $img;
-        echo "<img class=\"small_image\" src=\"$src\" >";
-    }
-    */?>
+    <!-- --><?php
+    /*    $folderWithImg = "img/images/max/";
+        $arrayWithImg = array_diff(scandir($folderWithImg), array('..', '.'));
+        foreach ($arrayWithImg as $img) {
+            $src = $folderWithImg . $img;
+            echo "<img class=\"small_image\" src=\"$src\" >";
+        }
+        */ ?>
+    <?php foreach ($product as $key) : ?>
+        <img class="small_image" src=<?= $key['url']?>>
+    <?php endforeach; ?>
 
 </div>
-<ul>
-    <?php foreach ($user as $key => $value) :?>
-        <li><?= $key ?>: <?= $value ?></li>
-    <?php endforeach; ?>
-</ul>
+
+
 <script src="js/js.js"></script>
 </body>
 </html>
