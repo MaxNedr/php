@@ -99,7 +99,7 @@ $product = getItem("select * from `product` WHERE id={$_GET['id']}");
             max-width: 80%;
             max-height: 80%;
     </style>
-    <script src="js/js.js"></script>
+<!--    <script src="js/js.js"></script>-->
 </head>
 <body>
 
