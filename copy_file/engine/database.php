@@ -11,8 +11,12 @@ $connection = mysqli_connect(
     $config['db']['database']
 );
 
+/**
+ * Получение одной строки из базы данныз по SQL запросу
+ * @param string $sql
+ * @return array|null
+ */
 function getItem(string $sql) {
-    // получение одной строки
     global $connection;
     $result = mysqli_query($connection, $sql);
 
@@ -20,8 +24,12 @@ function getItem(string $sql) {
     return $row;
 }
 
+/**
+ * Получение нескольких строк из базы данных по SQL запросу
+ * @param string $sql
+ * @return array
+ */
 function getItemArray(string $sql) {
-    // получение нескольких строк
     global $connection;
     $result = mysqli_query($connection, $sql);
 
@@ -34,8 +42,12 @@ function getItemArray(string $sql) {
     return $rows;
 }
 
+/**
+ * Простое выполнение SQL запроса к базе данных
+ * @param string $sql
+ * @return bool|mysqli_result
+ */
 function execute(string $sql) {
-    // выполнение запроса (insert, update)
     global $connection;
     $result = mysqli_query($connection, $sql);
 

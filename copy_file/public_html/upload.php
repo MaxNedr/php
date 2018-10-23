@@ -8,10 +8,10 @@
 require '../config/main.php';
 require '../engine/core.php';
 
-// логика страницы
-$message = 'Hello from index.php!';
+var_dump($_POST);
+var_dump($_FILES);
+
+//move_uploaded_file($_FILES['avatar']['tmp_name'], 'TEST.jpg');
 
 // вывод шаблона
-echo render('site/example', [
-    'message' => $message
-]);
+echo render('site/upload');
