@@ -20,15 +20,35 @@
         }
 
         .form input {
+            border-radius: 5px;
             width: 170px;
             height: 20px;
             padding-left: 5px;
         }
 
-        .form button, .form select {
+         .form select {
+             border-radius: 5px;
             width: 179px;
             height: 24px;
             padding-left: 5px;
+        }
+        .button{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+        }
+        .button button{
+            border-radius: 20px;
+            padding: 3px;
+            text-align: center;
+            outline: none;
+        }
+        .button button span{
+            display: flex;
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
         }
 
     </style>
@@ -51,7 +71,8 @@ if (isset($_POST['divide'])) {
     $operation = '/';
 };
 
-function result (int $first, int $second, string $operation) {
+function result(int $first, int $second, string $operation)
+{
     $error = 'ошибка';
     if ($operation == "+") {
         return $result = $first + $second;
@@ -68,18 +89,26 @@ function result (int $first, int $second, string $operation) {
 
     }
 
-};
+}
+
+;
 ?>
 <div class="form">
     <form action="index.php" method="post" enctype="multipart/form-data">
-        <input type="number" name="firstNumber" id="" value="<?php echo $first ?>">
-        <button name="plus">+</button>
-        <button name="minus">-</button>
-        <button name="multiplication">*</button>
-        <button name="divide">/</button>
-        <input type="number" name="secondNumber" id="" value="<?php echo $second ?>">
-        <input type="text" name="result" readonly
-               value="<?php echo 'Результат = '.result($first, $second, $operation)?>">
+        <label for="first">Введите первое число</label>
+        <input type="number" name="firstNumber" id="first" value="<?php echo $first ?>">
+        <label for="second">Введите второе число</label>
+        <input type="number" name="secondNumber" id="second" value="<?php echo $second ?>">
+        <p>Выберите операцию</p>
+        <div class="button">
+            <button name="plus"><span>+</span></button>
+            <button name="minus"><span>-</span></button>
+            <button name="multiplication"><span>*</span></button>
+            <button name="divide"><span>/</span></button>
+        </div>
+        <label for="result">Результат</label>
+        <input type="text" name="result" readonly id="result"
+               value="<?php echo result($first, $second, $operation) ?>">
     </form>
 </div>
 
