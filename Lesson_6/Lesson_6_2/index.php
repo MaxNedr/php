@@ -1,7 +1,6 @@
 <!--2. Создать калькулятор, который будет определять тип выбранной пользователем операции,
  ориентируясь на нажатую кнопку.-->
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,35 +19,41 @@
         }
 
         .form input {
+            font-size: 16px;
             border-radius: 5px;
             width: 170px;
             height: 20px;
-            padding-left: 5px;
+            padding: 3px 5px 3px 5px;
         }
 
-         .form select {
-             border-radius: 5px;
+        .form select {
+            border-radius: 5px;
             width: 179px;
             height: 24px;
             padding-left: 5px;
         }
-        .button{
+
+        .button {
             display: flex;
             flex-flow: row nowrap;
             justify-content: space-around;
         }
-        .button button{
+
+        .button button {
             border-radius: 20px;
             padding: 3px;
             text-align: center;
             outline: none;
+            margin-bottom: 10px;
         }
-        .button button span{
+
+        .button button span {
             display: flex;
             font-size: 20px;
             justify-content: center;
             align-items: center;
             padding: 5px;
+            cursor: pointer;
         }
 
     </style>
@@ -111,7 +116,6 @@ function result(int $first, int $second, string $operation)
                value="<?php echo result($first, $second, $operation) ?>">
     </form>
 </div>
-
 </body>
 </html>
 
