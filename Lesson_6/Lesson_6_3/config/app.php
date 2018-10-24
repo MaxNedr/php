@@ -3,7 +3,7 @@
 return [
     //  Настройки приложения
     'app' => [
-        'name' => 'PHP 1 Lesson 6',
+        'name' => 'Geekbrains PHP 1',
         'logPath' => ROOT . "/data/logs",
         'templatesPath' => ROOT . '/templates',
 

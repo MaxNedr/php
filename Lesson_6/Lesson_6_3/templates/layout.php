@@ -28,7 +28,7 @@
                 <a class="nav-link" href="/users.php?add">New user</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/comment.php">Комментарии</a>
+                <a class="nav-link" href="/comment.php">Comment</a>
             </li>
         </ul>
     </div>
