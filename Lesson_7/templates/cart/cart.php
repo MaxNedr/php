@@ -1,9 +1,11 @@
 <?php foreach ($productsInCart as $product):?>
 <div class="card w-100 mb-1">
-  <div class="card-body">
+  <div class="card-body d-flex justify-content-between align-items-center">
     <h5 class="card-title"><?= $product['product_name'] ?></h5>
+      <img class="media w-25 " src="<?= $product['url'] ?>" alt="Изображение">
     <p class="card-text"><?= $product['info'] ?></p>
-    <a href="#" class="btn btn-primary">Delete</a>
+    <p class="card-text">Количество : <?= $product['count_product'] ?> шт</p>
+    <a href="#" class="btn btn-primary ">Delete</a>
   </div>
 </div>
 <?php endforeach; ?>

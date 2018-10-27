@@ -10,13 +10,14 @@ $connection = mysqli_connect(
     $config['db']['password'],
     $config['db']['database']
 );
-
+mysqli_set_charset($connection, 'utf8');
 /**
  * Получение одной строки из базы данныз по SQL запросу
  * @param string $sql
  * @return array|null
  */
-function getItem(string $sql) {
+function getItem(string $sql)
+{
     global $connection;
     $result = mysqli_query($connection, $sql);
 
@@ -29,7 +30,8 @@ function getItem(string $sql) {
  * @param string $sql
  * @return array
  */
-function getItemArray(string $sql) {
+function getItemArray(string $sql)
+{
     global $connection;
     $result = mysqli_query($connection, $sql);
 
@@ -47,7 +49,8 @@ function getItemArray(string $sql) {
  * @param string $sql
  * @return bool|mysqli_result
  */
-function execute(string $sql) {
+function execute(string $sql)
+{
     global $connection;
     $result = mysqli_query($connection, $sql);
 
