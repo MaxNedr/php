@@ -3,10 +3,12 @@
 require '../config/main.php';
 require '../engine/core.php';
 
-//var_dump($_POST);
-var_dump($_SESSION);
-//var_dump($_COOKIE);
 
+//var_dump($_POST['buy']);
+//var_dump($_GET);
+//var_dump($_SESSION);
+//var_dump($_COOKIE);
+//var_dump($checkCart);
 
 if (isset($_GET['id'])) {
     echo render('catalog/product_view', [
@@ -18,6 +20,26 @@ if (isset($_GET['id'])) {
     ]);
 }
 
-if (isset($_POST['buy'])){
-    header('Location: catalog.php');
+if (isset($_POST['buy'])) {
+    $content = $_POST['buy'];
+    $contentVal = intval($_POST['buy']);
+    $checkCart = getItem("SELECT * FROM cart WHERE id_product={$contentVal}");
+    $sql = "insert into cart (id_product,count_product) value ('{$content}','1')";
+    $countUpdate = "UPDATE cart SET count_product=count_product+1 WHERE id_product={$contentVal}";
+    if (!$checkCart) {
+
+        if (!empty($content) && execute($sql)) {
+            header("Location: /catalog.php");
+        } else {
+            $error = 'Что-то пошло не так!';
+        }
+    }else{
+        execute($countUpdate);
+        header("Location: /catalog.php");
+    }
 }
+
+/*elseif (execute($checkCart) && execute($countUpdate)) {
+    header("Location: /catalog.php");
+}*/
+

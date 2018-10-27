@@ -5,8 +5,9 @@
       <img class="media w-25 " src="<?= $product['url'] ?>" alt="Изображение">
     <p class="card-text"><?= $product['info'] ?></p>
     <p class="card-text">Количество : <?= $product['count_product'] ?> шт</p>
-    <a href="#" class="btn btn-primary ">Delete</a>
-  </div>
+      <form method="post">
+          <a href="/cart.php?id=<?= $product['id'] ?>" class="btn btn-primary" name="delete">Delete</a>
+      </form>
 </div>
 <?php endforeach; ?>
 <form method="post">
