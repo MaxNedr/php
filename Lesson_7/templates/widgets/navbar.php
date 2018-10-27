@@ -4,6 +4,7 @@ $items = [
     ['label' => 'Home', 'url' => '/'],
     ['label' => 'Reviews', 'url' => '/reviews.php'],
     ['label' => 'Catalog', 'url' => '/catalog.php'],
+    ['label' => 'Cart', 'url' => '/cart.php'],
     ['label' => 'Login', 'url' => '/user.php', 'role' => '?'],
     ['label' => 'Profile', 'url' => '/user.php', 'role' => '@'],
     ['label' => 'Logout', 'url' => '/user.php?action=logout', 'role' => '@'],

@@ -7,6 +7,9 @@
             <a href="?id=<?= $product['id'] ?>"><h5 class="mt-0"><?= $product['name'] ?></h5></a>
             <h6 style="color: red"><?= $product['price'] ?> руб.</h6>
             <?= $product['info'] ?>
+            <form method="post">
+                <button name="buy" value="<?= $product['id'] ?>">BUY</button>
+            </form>
         </div>
     </div>
 <?php endforeach; ?>
