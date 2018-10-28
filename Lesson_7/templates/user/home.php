@@ -1,1 +1,4 @@
-<h1>home user</h1>
+<?php
+$userName = $_SESSION['auth']['login']
+?>
+<h1>Welcome <?php echo $userName ?></h1>

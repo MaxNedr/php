@@ -15,12 +15,23 @@ if (isset($_GET['id'])) {
         'product' => getItem("SELECT * FROM `product` WHERE id={$_GET['id']}")
     ]);
 } else {
+
+   if (isset($_GET['addToCart'])){
+       addItem($_GET['addToCart']);
+   }
     echo render('catalog/products_all_view', [
-        'products' => getItemArray("SELECT * FROM `product`")
-    ]);
+         'products' => getItemArray("SELECT * FROM `product`")
+     ]);
+}
+function addItem($id_product) {
+    if ($_SESSION['cart'][$id_product]) { //
+        $_SESSION['cart'][$id_product] += 1;
+    } else {
+        $_SESSION['cart'][$id_product] = 1;
+    }
 }
 
-if (isset($_POST['buy'])) {
+/*if (isset($_POST['buy'])) {
     $content = $_POST['buy'];
     $contentVal = intval($_POST['buy']);
     $checkCart = getItem("SELECT * FROM cart WHERE id_product={$contentVal}");
@@ -37,7 +48,7 @@ if (isset($_POST['buy'])) {
         execute($countUpdate);
         header("Location: /catalog.php");
     }
-}
+}*/
 
 
 
