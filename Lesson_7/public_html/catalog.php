@@ -39,7 +39,5 @@ if (isset($_POST['buy'])) {
     }
 }
 
-/*elseif (execute($checkCart) && execute($countUpdate)) {
-    header("Location: /catalog.php");
-}*/
+
 
