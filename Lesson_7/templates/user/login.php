@@ -15,5 +15,6 @@
             <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
         </div>
         <button type="submit" name="login_user" class="btn btn-primary">Вход</button>
+        <button type="submit" name="reg_new_user" class="btn btn-primary">Зарегистрироваться</button>
     </form>
 </div>

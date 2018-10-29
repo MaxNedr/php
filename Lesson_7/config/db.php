@@ -6,6 +6,6 @@ return [
         'user' => 'root',
         'password' => '',
         'host' => 'localhost',
-        'database' => 'lesson_6',
+        'database' => 'lesson_7',
     ]
 ];
