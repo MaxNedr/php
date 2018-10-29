@@ -35,10 +35,11 @@ function login() {
 
     echo render('user/login');
 }
+
+
 function createUser(){
-    if (isset($_POST['reg_new_user'])){
-       echo render('user/newUser');
-    }
+    echo render('user/newUser');
+
 }
 function deleteGood($id_product) {
     unset($_SESSION['cart'][$id_product]);
