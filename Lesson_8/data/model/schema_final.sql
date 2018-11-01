@@ -1,0 +1,15 @@
+-- insert into users(login,password) value('admin','123123'), ('Max','maxmax')
+  -- select * from product
+ -- delete from product where id>0
+-- alter table product add column url_img varchar(128)
+--  insert into product(name,description,price,quantity, category_id, url_img) value
+--  ('Средней жесткости', 'Описание', '2950', '1','9', '../img/man.png'),
+--  ('Средней жесткости', 'Описание', '2950', '1','10', '../img/woman.png'),
+--  ('Средней жесткости', 'Описание', '2950', '1','11', '../img/man.png'),
+--  ('Мягкая', 'Описание', '2950', '1','9','../img/man.png'),
+--  ('Мягкая', 'Описание', '2950', '1','10','../img/woman.png'),
+--  ('Мягкая', 'Описание', '2950', '1','11','../img/classik.png'),
+--  ('Жесткая', 'Описание', '2950', '1','9','../img/man.png'),
+--  ('Жесткая', 'Описание', '2950', '1','10','../img/woman.png'),
+--  ('Жесткая', 'Описание', '2950', '1','11','../img/classik.png'),
+--  ('Мягкая', 'Описание', '2600', '1','12','../img/mini.png')
