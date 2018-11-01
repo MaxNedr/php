@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Повторите пароль</label>
-            <input name="new-password-again" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input name="new-password-again" type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
         </div>
         <button type="submit" name="reg_user" class="btn btn-primary">Зарегистрироваться</button>
     </form>
