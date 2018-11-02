@@ -49,6 +49,9 @@ function routeHome()
 {
     echo render('user/home');
 }
+function routeOrder(){
+    echo render('shop/order');
+}
 
 function routeRegister()
 {

@@ -1,6 +1,6 @@
 
 <h1><?= $item['name'] ?></h1>
-<img src="<?= $item['url_img']?>" class="img-rounded" stlye="max-width: 350px; max-height: 350px" alt="">
+<img src="<?= $item['url_img']?>" class="img-rounded w-50"  alt="">
 <p>
     <?= $item['description'] ?>
 </p>
@@ -10,7 +10,7 @@
 </p>
 
 <p>
-    Осталось: <?= $item['quantity'] ?>
+    Осталось: <?= $item['quantity_in_stock'] ?>
 </p>
 
 <p>

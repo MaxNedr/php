@@ -4,7 +4,7 @@
     <?php foreach ($cats as $category): ?>
     <li>
         <a href="/shop/category.php?action=view&id=<?= $category['id'] ?>">
-            <?= $category['name'] ?>
+            <?= $category['category_name'] ?>
         </a>
     </li>
     <?php endforeach; ?>
