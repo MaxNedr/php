@@ -10,7 +10,9 @@ $items = [
     ['label' => 'Личный кабинет', 'url' => '/user.php', 'role' => '@'],
     ['label' => 'Выход', 'url' => '/user.php?action=logout', 'role' => '@'],
 ];
-
+if (isAdmin()){
+    $items[] = ['label' => 'Заказы', 'url' => '/user.php?action=orders', 'role' => '@'];
+}
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

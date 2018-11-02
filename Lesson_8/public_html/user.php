@@ -49,8 +49,21 @@ function routeHome()
 {
     echo render('user/home');
 }
-function routeOrder(){
-    echo render('shop/order');
+
+function routeOrder()
+{
+    if (isAdmin()) {
+        echo render('shop/order');
+    }
+
+}
+
+function routeOrders()
+{
+    if (isAdmin()) {
+        echo render('user/orders');
+    }
+
 }
 
 function routeRegister()
@@ -74,6 +87,14 @@ function routeRegister()
     }
 
     echo render('user/register');
+}
+
+function routeDelete_order()
+{
+    $id = $_GET['id'];
+    $sql = "delete from `order` where id={$id}";
+    execute($sql);
+    header('Location: /user.php?action=orders');
 }
 
 route();
