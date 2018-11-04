@@ -2,11 +2,19 @@
 
 <ul class="list-group">
     <?php foreach ($prods as $product): ?>
-        <li class="list-unstyled">
+        <li class="list-unstyled  d-flex mb-1" id="<?= $product['id'] ?>">
             <a href="/shop/product.php?id=<?= $product['id'] ?>"
                class="list-group-item list-group-item-action list-group-item-success">
                 <?= $product['name'] ?>
             </a>
+            <?php if (isAdmin()): ?>
+
+                <button class="btn btn-primary ml-4 mb-1 delete_product" data-id="<?= $product['id'] ?>"
+                        name="delete_product">Удалить
+                </button>
+
+
+            <?php endif ?>
         </li>
     <?php endforeach; ?>
 </ul>
@@ -39,5 +47,6 @@
     </div>
 
 <?php endif ?>
-<?php
+
+<script defer src="../js/delete_product.js"></script>
 

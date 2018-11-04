@@ -50,6 +50,57 @@ function routeDeleteCategory(){
     execute($sql);
 
 }
+function routeDeleteProduct(){
+    $id = $_GET['id'];
+    $sql = "delete from `product` where id={$id}";
+    execute($sql);
+
+}
+
+function transliterations($str)
+{
+    $alphabet = [
+        'а' => 'a',
+        'б' => 'b',
+        'в' => 'v',
+        'г' => 'g',
+        'д' => 'd',
+        'е' => 'e',
+        'ё' => 'yo',
+        'ж' => 'zh',
+        'з' => 'z',
+        'и' => 'i',
+        'й' => 'j',
+        'к' => 'k',
+        'л' => 'l',
+        'м' => 'm',
+        'н' => 'n',
+        'о' => 'o',
+        'п' => 'p',
+        'р' => 'r',
+        'с' => 's',
+        'т' => 't',
+        'у' => 'u',
+        'ф' => 'f',
+        'х' => 'h',
+        'ц' => 'c',
+        'ч' => 'ch',
+        'ш' => 'sh',
+        'щ' => 'sch',
+        'ъ' => '``',
+        'ы' => 'y`',
+        'ь' => '``',
+        'э' => 'e`',
+        'ю' => 'yu',
+        'я' => 'ya',
+        ' ' => '_',
+    ];
+
+    $str = mb_strtolower($str);
+    $res = strtr($str, $alphabet);
+    return $res;
+}
+
 if (isset($_POST['createNewProduct'])){
     $name = $_POST['nameProduct'];
     $desc = $_POST['descriptionProduct'];
@@ -71,6 +122,7 @@ if (isset($_POST['createNewProduct'])){
             echo 'Файл неподдерживаемого типа';
             exit;
     }
+    $newFilename1 = transliterations($newFilename1);
 
     if (!move_uploaded_file($uploadInfo['tmp_name'], $newFilename.$newFilename1)) {
         echo 'Не удалось осуществить сохранение файла';
@@ -83,5 +135,7 @@ if (isset($_POST['createNewProduct'])){
     header("Location: category.php?action=view&id={$_GET['id']}");
 
 }
+// Сделать проверку на существование URL и имени(оно должно быть уникальным)
+
 
 route();

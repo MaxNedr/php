@@ -21,6 +21,7 @@
 </ul>
 <?php if (isAdmin()): ?>
     <div class="card">
+
         <div class="card-body">
             <form method="post">
                 <div class="form-group">
