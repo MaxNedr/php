@@ -91,10 +91,11 @@ function routeRegister()
 
 function routeDelete_order()
 {
+
     $id = $_GET['id'];
     $sql = "delete from `order` where id={$id}";
     execute($sql);
-    header('Location: /user.php?action=orders');
+
 }
 
 route();
