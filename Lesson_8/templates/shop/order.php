@@ -19,6 +19,4 @@ where product.id=order_item.product_id&& product.category_id=category.id&& order
 
     <?php endforeach; ?>
 
-    <button class="btn btn-primary mb-1">В работу</button>
-    <button class="btn btn-primary">Удалить</button>
 </div>

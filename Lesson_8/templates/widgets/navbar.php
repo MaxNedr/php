@@ -8,10 +8,11 @@ $items = [
     ['label' => 'Корзина', 'url' => '/shop/cart.php'],
     ['label' => 'Вход', 'url' => '/user.php', 'role' => '?'],
     ['label' => 'Личный кабинет', 'url' => '/user.php', 'role' => '@'],
+    ['label' => 'Мои заказы', 'url' => '/user.php?action=my_order', 'role' => '@'],
     ['label' => 'Выход', 'url' => '/user.php?action=logout', 'role' => '@'],
 ];
 if (isAdmin()){
-    $items[] = ['label' => 'Заказы', 'url' => '/user.php?action=orders', 'role' => '@'];
+    $items[] = ['label' => 'Все заказы', 'url' => '/user.php?action=orders', 'role' => '@'];
 }
 ?>
 

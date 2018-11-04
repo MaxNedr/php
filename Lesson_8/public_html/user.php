@@ -98,4 +98,8 @@ function routeDelete_order()
 
 }
 
+function routeMy_order(){
+    echo render('user/myOrder');
+}
+
 route();
