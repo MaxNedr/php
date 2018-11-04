@@ -7,11 +7,10 @@ $(document).ready(function () {
             function (response, status) {
                 console.log(status);
                 console.log(response);
-                console.log(response.result);
                 let parent = $('#'+id );
 
                 parent.remove();
-                alert('заказ удален')
+                alert('Заказ удален')
 
             }
         );
